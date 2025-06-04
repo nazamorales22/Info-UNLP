@@ -14,7 +14,7 @@
     
 ## 🔧 Proyectos subidos
 
-### 🟡 Pascal
+### 🔵 Pascal
 - Árboles Binarios de Búsqueda
 - Trabajo Práctico 1 – Manejo de vectores y listas
 - Estructuras recursivas simples
@@ -22,4 +22,8 @@
 ### 🔵 Java
 - Hola Mundo en Java ☕
 - Primeros pasos con objetos
-Continuaraaa........... <\>
+
+
+### 🔵 R-Info
+-Varios Robot Distribuyendo Flores y Papeles Por La Ciudad 
+-Continuaraaa........... <\>
