@@ -6,11 +6,12 @@
 
 - Conseptos algoritmos Datos y Programas  (Pascal)
 - Taller De Programacion...
-    Continuacion de Imperativo en Pascal(Recurción, Árboles Binarios de Busqueda)
+- Continuacion de Imperativo en Pascal(Recurción, Árboles Binarios de Busqueda)
+- Introducción a la Programación Orientada a Objetos (Java)
+- Concurrencia Procedural en elentorno R-Info3.1
+- 
   
-    Introducción a la Programación Orientada a Objetos (Java)
-  
-    Concurrencia Procedural en elentorno R-Info3.1
+    
 ## 🔧 Proyectos subidos
 
 ### 🟡 Pascal
