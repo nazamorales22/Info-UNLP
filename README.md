@@ -25,5 +25,5 @@
 
 
 ### 🔵 R-Info
--Varios Robot Distribuyendo Flores y Papeles Por La Ciudad 
--Continuaraaa........... <\>
+- Varios Robot Distribuyendo Flores y Papeles Por La Ciudad 
+- Continuaraaa........... <\>
