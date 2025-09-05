@@ -8,7 +8,7 @@
 - Taller De Programacion...
 - Continuacion de Imperativo en Pascal(Recurción, Árboles Binarios de Busqueda)
 - Introducción a la Programación Orientada a Objetos (Java)
-- Concurrencia Procedural en elentorno R-Info3.1
+- Concurrencia Procedural en el entorno R-Info3.1
 - 
   
     
