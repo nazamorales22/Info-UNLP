@@ -1,14 +1,11 @@
 # Proyectos de Primer Año – Licenciatura en Sistemas (UNLP)
 
-¡Hola! Soy Nazareno y este es mi espacio donde voy subiendo trabajos y ejercicios que hago mientras estudio la Licenciatura en Sistemas en la UNLP.
+¡Hola! Soy Naza y este es mi GITHUB donde voy a subir trabajos y ejercicios que hago mientras estudio la Licenciatura en Sistemas en la gran UNLP.
 
 ## 📚 Materias hasta ahora
 
-- Conseptos algoritmos Datos y Programas  (Pascal)
-- Taller De Programacion...
-- Continuacion de Imperativo en Pascal(Recurción, Árboles Binarios de Busqueda)
-- Introducción a la Programación Orientada a Objetos (Java)
-- Concurrencia Procedural en el entorno R-Info3.1
+- Conseptos Algoritmos Datos y Programas  (Pascal) ;
+- Taller De Programacion...[Modulos : Imperativo,Objetos,Concurrencia Procedural] ;
 - 
   
     
