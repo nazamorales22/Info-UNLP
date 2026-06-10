@@ -6,7 +6,7 @@
 
 - Conseptos Algoritmos Datos y Programas  (Pascal) ;
 - Taller De Programacion...[Modulos : Imperativo,Objetos,Concurrencia Procedural] ;
-- 
+- :p
   
     
 ## 🔧 Proyectos subidos
