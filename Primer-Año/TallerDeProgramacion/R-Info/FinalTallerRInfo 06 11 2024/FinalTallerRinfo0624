@@ -1,0 +1,144 @@
+programa ejemplo
+procesos
+  proceso irFuente(ES obj: numero;E av:numero;E ca:numero; E id:numero)
+  variables
+    avd,cad:numero
+  comenzar
+    repetir 5
+      si id=1
+        BloquearEsquina(18,13)
+        Pos(18, 13) 
+        tomarFlor
+        Pos(av,ca)
+        LiberarEsquina(18,13)
+        Random(avd,11,15)
+        Random(cad,11,15)
+        BloquearEsquina(avd,cad)
+        Pos(avd,cad)
+        depositarFlor
+        Pos(av,ca)
+        LiberarEsquina(avd,cad)
+      sino 
+        si id=2
+          BloquearEsquina(18,13)
+          Pos(18, 13) 
+          tomarPapel
+          Pos(av,ca)
+          LiberarEsquina(18,13)
+          Random(avd,21,25)
+          Random(cad,11,15)
+          BloquearEsquina(avd,cad)
+          Pos(avd,cad)
+          depositarPapel
+          Pos(av,ca)
+          LiberarEsquina(avd,cad)
+  fin
+  proceso etapaDos(ES obj:numero;E av:numero; E ca:numero; E id:numero)
+  variables
+    avb,cab:numero
+    termino:boolean
+  comenzar
+    termino:=F
+    mientras termino=F
+      si id=1
+        Random(avb,21,25)
+        Random(cab,11,15)
+        BloquearEsquina(avb,cab)
+        Pos(avb,cab)
+        si HayPapelEnLaEsquina 
+          tomarPapel
+          obj:=obj+1
+          termino:=V
+        Pos(av,ca)
+        LiberarEsquina(avb,cab)
+      sino
+        si id=2
+          Random(avb,11,15)
+          Random(cab,11,15)
+          BloquearEsquina(avb,cab)
+          Pos(avb,cab)
+          si HayFlorEnLaEsquina
+            tomarFlor
+            obj:=obj+1
+            termino:=V
+          Pos(av,ca)
+          LiberarEsquina(avb,cab)
+  fin
+  proceso depositar(E av:numero; E ca:numero; E id:numero)
+  comenzar
+    si id=1
+      BloquearEsquina(18,13)
+      Pos(18, 13) 
+      depositarPapel
+      Pos(av,ca)
+      LiberarEsquina(18,13)
+    sino
+      si id=2
+        BloquearEsquina(18,13)
+        Pos(18, 13) 
+        depositarFlor
+        Pos(av,ca)
+        LiberarEsquina(18,13)
+  fin
+areas
+  area1: AreaC (11,11,15,15)
+  area2: AreaC (21,11,25,15)
+  base1: AreaP(2,2,2,2)
+  base2: AreaP(3,3,3,3)
+  fuente:AreaPC(18,13,18,13)
+  area3: AreaP(1,1,1,1)
+robots
+  robot robot1
+  variables
+    id,av,ca,obj:numero
+    listo:boolean  
+  comenzar
+    RecibirMensaje(id,RF)
+    av:=PosAv
+    ca:=PosCa
+    irFuente(obj,av,ca,id)
+    etapaDos(obj,av,ca,id)
+    si obj=1
+      depositar(av,ca,id)
+      EnviarMensaje(id,RF)
+      EnviarMensaje(V,RF)
+  fin
+
+  robot robot2
+  variables
+    id,ganador:numero
+    listo:boolean
+  comenzar
+    EnviarMensaje(1,R1)
+    EnviarMensaje(2,R2)
+    RecibirMensaje(id,*)
+    si id=1
+      RecibirMensaje(listo,R1)
+      ganador:=id
+      RecibirMensaje(id,R2)
+      RecibirMensaje(listo,R2)
+    sino 
+      RecibirMensaje(listo,R2)
+      ganador:=id
+      RecibirMensaje(id,R1)
+      RecibirMensaje(listo,R1)  
+    Informar('El Ganador Fue  ', ganador)
+  fin
+variables
+  R1: robot1
+  R2: robot1
+  RF: robot2
+comenzar
+  AsignarArea(R1, base1)
+  AsignarArea(R2, base2)
+  AsignarArea(R1, area1)
+  AsignarArea(R2, area2)
+  AsignarArea(R2, area1)
+  AsignarArea(R1, area2)
+  AsignarArea(R1, fuente)
+  AsignarArea(R2, fuente) 
+  AsignarArea(RF, area3) 
+  Iniciar(R1, 2,2) 
+  Iniciar(R2, 3,3) 
+  Iniciar(RF, 1,1)
+fin 

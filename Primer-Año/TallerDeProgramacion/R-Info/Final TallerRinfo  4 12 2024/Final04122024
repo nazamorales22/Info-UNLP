@@ -1,0 +1,128 @@
+{ vertical recorre todo y luego deposita en la ultima calle del horizontal termina y le avisa que ya puede acceder a la ultima esquina
+horizontal recorre hasta la esquina anterior de terminar su recorrido esperando el msj de que el vertical deposito lo juntado 
+y cuando dicen maximizar la concurrencia se refiere a que no espere el segundo do robotss para recorrer y que al momento de depositar lo haga de  a una flor
+Cambiar robotss vertical no bloquee esquina y en el horizontal que directamente junte todo de la esquina}
+
+programa Final04122024
+procesos
+  proceso JuntarF(ES f: numero)
+  comenzar
+    mientras HayFlorEnLaEsquina 
+      tomarFlor
+      f:=f+1
+  fin
+areas
+  ciudad: AreaC (1,1,100,100)
+robots
+  robot robot1
+  variables
+    f,av,ca:numero
+  comenzar
+    f:=0
+    derecha
+    derecha
+    repetir 8
+      JuntarF(f)
+      mover
+    JuntarF(f)
+    av:=PosAv
+    ca:=PosCa
+    BloquearEsquina(19,20)
+    Pos(19,20)
+    repetir f
+      depositarFlor
+    Pos(av,ca)
+    LiberarEsquina(19,20)
+    EnviarMensaje(f,RH1)
+  fin 
+  robot robot2 
+  variables
+    f,fc,av,ca:numero
+  comenzar
+    f:=0
+    derecha
+    repetir 9
+      JuntarF(f)
+      mover
+    RecibirMensaje(fc,RV1)
+    mover
+    repetir fc
+      tomarFlor
+    mientras HayFlorEnLaEsquina 
+      tomarFlor
+      f:=f+1
+    f:=f+fc
+    av:=PosAv
+    ca:=PosCa
+    repetir f
+      BloquearEsquina(20,20)
+      Pos(20,20)
+      depositarFlor
+      Pos(av,ca)
+      LiberarEsquina(20,20)
+  fin
+  robot robot3
+  variables
+    f,av,ca:numero
+  comenzar
+    f:=0
+    derecha
+    derecha
+    repetir 8
+      JuntarF(f)
+      mover
+    JuntarF(f)
+    av:=PosAv
+    ca:=PosCa
+    BloquearEsquina(21,20)
+    Pos(21,20)
+    repetir f
+      depositarFlor
+    Pos(av,ca)
+    LiberarEsquina(21,20)
+    EnviarMensaje(f,RH2)
+  fin 
+  robot robot4
+  variables
+    f,fc,av,ca:numero
+  comenzar
+    f:=0
+    derecha
+    derecha
+    derecha
+    repetir 9
+      JuntarF(f)
+      mover
+    JuntarF(f)
+    RecibirMensaje(fc,RV2)
+    mover
+    repetir fc
+      tomarFlor
+    mientras HayFlorEnLaEsquina 
+      tomarFlor
+      f:=f+1
+    f:=f+fc
+    av:=PosAv
+    ca:=PosCa
+    repetir f
+      BloquearEsquina(20,20)
+      Pos(20,20)
+      depositarFlor
+      Pos(av,ca)
+      LiberarEsquina(20,20)
+  fin
+variables
+  RV1: robot1
+  RV2: robot3
+  RH1: robot2
+  RH2: robot4
+comenzar
+  AsignarArea(RV1, ciudad)
+  AsignarArea(RV2, ciudad)
+  AsignarArea(RH1, ciudad)
+  AsignarArea(RH2, ciudad)
+  Iniciar(RV1 ,19,29 )
+  Iniciar(RH1, 9,20) 
+  Iniciar(RV2, 21,29)
+  Iniciar(RH2, 31,20)
+fin
